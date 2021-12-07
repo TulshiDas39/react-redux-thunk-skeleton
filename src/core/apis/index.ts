@@ -1,2 +1,2 @@
-export * from './ApiUsers';
+export * from './ApiGetUser';
 export * from './ApiAdminLogin';

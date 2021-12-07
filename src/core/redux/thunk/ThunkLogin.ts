@@ -1,4 +1,4 @@
-import { ApiAdminLogin, ApiUsers, IApiLoginResponse, IApiUserResponse, IApiResponseModel } from "../..";
+import { ApiLogin, ApiGetUser, IApiLoginResponse, IApiResponseModel } from "../..";
 import { CreateExtendedThunkSlice } from "../createThunkSlice";
 
 interface IParams{
@@ -18,5 +18,5 @@ export const ThunkLogin = CreateExtendedThunkSlice<
       return {...state,response:param.arg.localData!};
     }
     if(!param.arg.apiData) throw "no api data";
-    return ApiAdminLogin(param.arg.apiData.userName!,param.arg.apiData.password!);
+    return ApiLogin(param.arg.apiData.userName!,param.arg.apiData.password!);
 });

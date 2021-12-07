@@ -1,10 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { ThunkGetUsers, ThunkLogin } from "..";
+import { ThunkGetUser, ThunkLogin } from "..";
 import { CreateReducerFromThunk } from "../createThunkReducer";
 
 
 const reducers = {
-    users:CreateReducerFromThunk(ThunkGetUsers),
+    user:CreateReducerFromThunk(ThunkGetUser),
     login:CreateReducerFromThunk(ThunkLogin)
 }
 

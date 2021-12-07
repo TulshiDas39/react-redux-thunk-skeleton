@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import { Form } from "react-bootstrap";
 import { Redirect, useHistory } from "react-router";
 import { UiRoutes } from "../../config/UIRoutes";
-import { ApiAdminLogin, IdTokenClaims, ThunkLogin, useDispatchTyped } from "../../core";
+import { ApiLogin, IdTokenClaims, ThunkLogin, useDispatchTyped } from "../../core";
 import { AppStorage, AzureAuthenticationContext, useMultiState } from "../../lib"
 
 interface IState{
