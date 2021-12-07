@@ -4,5 +4,5 @@ export class ApiRoutes{
     static GetUsers = `${this.BaseUrl}/api/users`;
     
     static Auth = `${this.BaseUrl}/api/Auth`;
-    static Login = `${this.BaseUrl}/login`;
+    static Login = `${this.BaseUrl}/api/login`;
 };

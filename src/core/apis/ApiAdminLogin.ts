@@ -6,6 +6,6 @@ export interface IApiLoginResponse{
   token:string;
 }
 
-export function ApiLogin(userName:string,password:string){
-    return Intercept.post<IApiLoginResponse>(`${ApiRoutes.Login}`,{ userName,password});
+export function ApiLogin(email:string,password:string){
+    return Intercept.post<IApiLoginResponse>(`${ApiRoutes.Login}`,{ email,password});
 }
