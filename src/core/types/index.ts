@@ -6,3 +6,4 @@ export * from './ThunkArg';
 export * from './ThunkResponse';
 export * from './AdResponse';
 export * from './IdTokenClaims';
+export * from './IRequestConfig';

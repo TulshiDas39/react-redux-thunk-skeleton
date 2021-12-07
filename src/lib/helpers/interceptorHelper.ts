@@ -1,7 +1,7 @@
-import { AxiosResponse } from "axios";
+import { AxiosRequestConfig, AxiosResponse } from "axios";
 import { AppStorage } from "..";
 import { UiRoutes } from "../../config/UIRoutes";
-import { IApiErrorModel, IApiResponseModel } from "../../core";
+import { IApiErrorModel, IApiResponseModel, IRequestConfig } from "../../core";
 
 export class InterceptHelper {
     static defaultRequestConfig = {
@@ -10,14 +10,18 @@ export class InterceptHelper {
         }
     }
 
-    static getAuthorizedRequestConfig = () => {
+    static getRequestConfig = (config?:IRequestConfig):AxiosRequestConfig => {
         let token = AppStorage.getAccessToken();
-        return {
+        const requestConfig:AxiosRequestConfig={
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
             }
         }
+        if(config){
+            if(config.contentType) requestConfig.headers!['Content-Type'] = config.contentType;
+        }
+        return requestConfig;
     }
 
     static handleHttpResponse(res:AxiosResponse){
