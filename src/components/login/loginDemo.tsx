@@ -12,11 +12,11 @@ interface IState{
     password:string
 }
 
-function LoginComponent(){
+function LoginDemoComponent(){
     const [state,setState]=useMultiState<IState>({isBusy:false,password:"cityslicka",userName:"eve.holt@reqres.in"});
     const dispatch = useDispatchTyped();
     const history = useHistory();
-    if(!!AppStorage.getAccessToken()) return <Redirect to={UiRoutes.Root} />    
+    if(!!AppStorage.getAccessToken()) return <Redirect to={UiRoutes.HomeDemo} />    
 
       
     const logIn = () => {
@@ -24,7 +24,7 @@ function LoginComponent(){
             if(res.response) {
                 AppStorage.setAccessToken(res.response.token);
                 AppStorage.setUserInfo(res.response);
-                history.push(UiRoutes.Root);
+                history.push(UiRoutes.HomeDemo);
             }
         })
     };
@@ -50,4 +50,4 @@ function LoginComponent(){
     </div>
 }
 
-export const Login = React.memo(LoginComponent)
+export const LoginDemo = React.memo(LoginDemoComponent)

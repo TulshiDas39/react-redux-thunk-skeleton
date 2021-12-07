@@ -5,7 +5,7 @@ import { UiRoutes } from "../../config/UIRoutes";
 import { ThunkGetUser, useDispatchTyped } from "../../core";
 import { AppStorage, useSelectorApi } from "../../lib";
 
-function HomeComponent(){
+function HomeDemoComponent(){
     const dispatch = useDispatchTyped();
     const history = useHistory();
     useEffect(()=>{
@@ -16,9 +16,9 @@ function HomeComponent(){
     const user = userData.response?.data;
     const handleLogout = ()=>{
         localStorage.clear();
-        history.push(UiRoutes.Root);
+        history.push(UiRoutes.HomeDemo);
     }
-    if(!AppStorage.getAccessToken()) return <Redirect to={UiRoutes.Login} />
+    if(!AppStorage.getAccessToken()) return <Redirect to={UiRoutes.LoginDemo} />
     return <div className="h-100 d-flex justify-content-center align-items-center">
         {!!user && <div>
             <div>
@@ -34,4 +34,4 @@ function HomeComponent(){
     </div>
 }
 
-export const Home = React.memo(HomeComponent);
+export const HomeDemo = React.memo(HomeDemoComponent);

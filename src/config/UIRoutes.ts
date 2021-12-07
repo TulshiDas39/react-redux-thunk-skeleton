@@ -1,4 +1,5 @@
 export class UiRoutes{
-    static Root= "/"
-    static Login = '/login'    
+    static Root = "/"
+    static HomeDemo= "/"
+    static LoginDemo = '/loginDemo'    
 };

@@ -6,8 +6,8 @@ function App() {
   return (
     <BrowserRouter>
         <Switch>
-          <Route path={[UiRoutes.Login]} component={PublicLayout}/>
-          <Route path={[UiRoutes.Root]} component={PrivateLayout}/>
+          <Route path={[UiRoutes.LoginDemo]} component={PublicLayout}/>
+          <Route path={[UiRoutes.HomeDemo,UiRoutes.Root]} component={PrivateLayout}/>
         </Switch>
       </BrowserRouter>
   );

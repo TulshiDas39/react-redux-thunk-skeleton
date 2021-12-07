@@ -39,9 +39,9 @@ export class InterceptHelper {
         }
 
         if (error?.status === 401) {
-            if (window.location.pathname !== UiRoutes.Login) {
+            if (window.location.pathname !== UiRoutes.LoginDemo) {
                 localStorage.clear();
-                window.location.pathname = UiRoutes.Login;
+                window.location.pathname = UiRoutes.LoginDemo;
             }
         }
         const response:IApiResponseModel={

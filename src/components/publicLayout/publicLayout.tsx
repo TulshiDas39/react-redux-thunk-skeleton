@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { Login } from "..";
+import { LoginDemo } from "..";
 import { UiRoutes } from "../../config/UIRoutes";
 
 function PublicLayoutComponent(){
     return <Switch>
-        <Route exact path={UiRoutes.Login} component={Login}  />
+        <Route exact path={UiRoutes.LoginDemo} component={LoginDemo}  />
     </Switch>
 }
 
