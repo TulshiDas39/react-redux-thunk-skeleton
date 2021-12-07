@@ -1,4 +1,4 @@
-import { ApiLogin, ApiGetUser, IApiLoginResponse, IApiResponseModel } from "../..";
+import { ApiLogin, IApiLoginResponse, IApiResponseModel } from "../..";
 import { CreateExtendedThunkSlice } from "../createThunkSlice";
 
 interface IParams{

@@ -12,14 +12,14 @@ function HomeComponent(){
         dispatch(ThunkGetUser({arg:{userId:"2"}}));
     },[])
     const userData = useSelectorApi("user");
-    if(userData.isBusy) return <p>Loading...</p>
+    if(userData.isBusy) return <p className="text-center">Loading...</p>
     const user = userData.response?.data;
     const handleLogout = ()=>{
         localStorage.clear();
         history.push(UiRoutes.Root);
     }
     if(!AppStorage.getAccessToken()) return <Redirect to={UiRoutes.Login} />
-    return <div>
+    return <div className="h-100 d-flex justify-content-center align-items-center">
         {!!user && <div>
             <div>
                 <img src={user.avatar} alt="profile-image" />
@@ -27,7 +27,9 @@ function HomeComponent(){
             <p>Name: {user.first_name} {user.last_name}</p>    
             <p>Email: {user.email}</p>            
             
-            <Button onClick={handleLogout}>Logout</Button>
+            <div className="text-center py-2">
+                <Button onClick={handleLogout}>Logout</Button>
+            </div>
         </div>}
     </div>
 }
